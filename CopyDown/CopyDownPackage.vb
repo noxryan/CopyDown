@@ -82,10 +82,10 @@ Public NotInheritable Class CopyDownPackage
         Dim DTE2 As EnvDTE80.DTE2
         DTE2 = Package.GetGlobalService(GetType(EnvDTE.DTE))
         Dim sel As TextSelection = CType(DTE2.ActiveDocument.Selection, TextSelection)
-        sel.StartOfLine(0) '' move to start
-        sel.EndOfLine(True) '' select to end
+        sel.StartOfLine(0)
+        sel.EndOfLine(True)
         Dim line As String = sel.Text
-        sel.EndOfLine(False) '' move to end
+        sel.EndOfLine(False)
         sel.Insert(ControlChars.NewLine + line, vsInsertFlags.vsInsertFlagsCollapseToEnd)
     End Sub
 
